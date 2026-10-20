@@ -1,0 +1,28 @@
+
+
+<div class="container ">
+    <div d-flex align-items-center gap-5 >
+    <span style="font-size: large;">Cart</span>
+    <img src="shopping-cart.png" alt="cart" class="img-fluid" style=" width:40px">
+</div>
+<ul
+class="list-group">
+
+<li 
+*ngFor="let item of service.cart()"
+class="list-group-item d-flex justify-content-between">
+
+{{item.title}}
+
+
+<button
+class="btn btn-danger btn-sm"
+(click)="service.deleteProduct(item.id)">
+
+Delete
+
+</button>
+
+</li>
+
+</ul></div>

@@ -1,0 +1,65 @@
+<div class="container">
+    <h4>
+    Hello {{username()}}  ,
+</h4>
+    <div class="col-md-12 ">
+<div class="input-group-text mb-3">
+    
+       <input
+    type="text"
+    class="form-control mb-3 col-md-6"
+    placeholder="Search products..."
+    [(ngModel)]="searchText"
+     >
+          <img  
+          src="\magnifying-glass-search.png" alt="search">
+   
+</div>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+
+    <div class="col-md-4 mb-3"
+     *ngFor="let product of products() | search:searchText:['title','description']">
+    
+      <app-product-card
+      [product]="product"
+        (addCart)="addCart($event)"
+        (addFav)="addFav($event)"
+        (titleClick)="goToDetails($event)"></app-product-card>
+         <!-- <img
+        [src]="product.thumbnail"
+        class="card-img-top">
+        <div class="card-body"
+        appShadow>
+        <h5 (click)="goToDetails(product.id)" style="cursor:pointer">{{product.title}}</h5>
+
+             <h5>{{product.title}}</h5> 
+
+            <p>{{product.description}}</p>
+
+            <h4>{{product.price}}$</h4>
+ 
+ 
+            <button  class="btn btn-success" (click)="addCart(product)">
+                Add To Cart
+            </button>   
+            <button class="btn btn-warning ms-2"
+            (click)="addFav(product)">
+            Favorite
+        </button> 
+       
+    </div> 
+    
+</div> -->
+    </div>
+    
+</div>
+
+    </div>
+    <div class="col-md-5 ">
+<app-product-cart></app-product-cart>
+</div>
+        <div class="col-md-5 ">
+<app-favorit-product></app-favorit-product>
+        </div>
+        
+</div>

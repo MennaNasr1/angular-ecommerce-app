@@ -1,0 +1,7 @@
+
+<div class="container mt-4" *ngIf="product() as p">
+    <h2>{{p.title}}</h2>
+    <img [src]="p.thumbnail" class="img-fluid" style="max-width:300px">
+    <p>{{p.description}}</p>
+    <h4>{{p.price}}$</h4>
+  </div>

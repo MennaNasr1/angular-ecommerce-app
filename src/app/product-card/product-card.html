@@ -1,0 +1,12 @@
+<div class="card h-101" appShadow>
+    <img [src]="product.thumbnail" class="card-img-top">
+    <div class="card-body">
+      <h5 (click)="titleClick.emit(product.id)" style="cursor:pointer">
+        {{ product.title }}
+      </h5>
+      <p>{{ product.description | truncate:30 }}</p>
+      <h4>{{ product.price | currency }}</h4>
+      <button class="btn btn-success" (click)="addCart.emit(product)">Add To Cart</button>
+      <button class="btn btn-warning ms-2" (click)="addFav.emit(product)">Favorite</button>
+    </div>
+  </div>
